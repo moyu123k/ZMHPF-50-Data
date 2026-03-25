@@ -1,0 +1,66 @@
+zizhi50/
+├─ ADL/                         # 日常行为大类
+│  ├─ sit/                       # 坐姿行为
+│  │  ├─ camera1/                # 视角1
+│  │  │  ├─ Frame Image/        
+│  │  │  ├─ Video/              
+│  │  │  └─ Synchronized Data.xlsx  
+│  │  ├─ camera2/                # 视角2
+│  │  │  ├─ Frame Image/
+│  │  │  ├─ Video/
+│  │  │  └─ Synchronized Data.xlsx
+│  │  ├─ camera3/                # 视角3
+│  │  │  ├─ Frame Image/
+│  │  │  ├─ Video/
+│  │  │  └─ Synchronized Data.xlsx
+│  │  └─ camera4/                # 视角4
+│  │     ├─ Frame Image/
+│  │     ├─ Video/
+│  │     └─ Synchronized Data.xlsx
+│  ├─ squat/                  
+│  │  ├─ camera1/
+│  │  │  ├─ Frame Image/
+│  │  │  ├─ Video/
+│  │  │  └─ Synchronized Data.xlsx
+│  │  ├─ camera2/
+│  │  │  ├─ Frame Image/
+│  │  │  ├─ Video/
+│  │  │  └─ Synchronized Data.xlsx
+│  │  ├─ camera3/
+│  │  │  ├─ Frame Image/
+│  │  │  ├─ Video/
+│  │  │  └─ Synchronized Data.xlsx
+│  │  └─ camera4/
+│  │     ├─ Frame Image/
+│  │     ├─ Video/
+│  │     └─ Synchronized Data.xlsx
+│  ├─ stand/                     # 站姿行为（结构同sit）
+│  └─ walk/                      # 行走行为（结构同sit）
+├─ FALL/                         # 跌倒行为
+│  ├─ camera1/                   # 视角1
+│  │  ├─ Frame Image/
+│  │  ├─ Video/
+│  │  └─ Synchronized Data.xlsx
+│  ├─ camera2/                   # 视角2
+│  │  ├─ Frame Image/
+│  │  ├─ Video/
+│  │  └─ Synchronized Data.xlsx
+│  ├─ camera3/                   # 视角3
+│  │  ├─ Frame Image/
+│  │  ├─ Video/
+│  │  └─ Synchronized Data.xlsx
+│  └─ camera4/                   # 视角4
+│     ├─ Frame Image/
+│     ├─ Video/
+│     └─ Synchronized Data.xlsx
+└─ 数据集结构介绍.txt             # 数据集说明文档
+
+
+注 : zizhi50 数据集在根目录下分为 ADL 与 FALL 两大类别，分别对应正常日常行为与异常跌倒行为两类样本。
+ADL（Activities of Daily Living）：包含四类精细日常行为，分别为 sit（坐姿）、squat（蹲姿）、stand（站姿）和 walk（行走），每类行为均以独立子目录形式组织。
+FALL：专门存放跌倒行为样本，不做额外动作类型细分。
+在每个行为子目录下，数据按采集视角划分为 camera1、camera2、camera3、camera4 四个子文件夹，用于存储不同视角下同步采集的多模态样本。数据集中所有视频样本均为固定 50 帧 的短视频片段，可直接用于统一长度的时序特征学习与行为识别任务。
+每个视角文件夹（cameraN）内包含三类核心数据：
+Video/：存储原始 50 帧视频文件；
+Frame Image/：存储视频拆解后的逐帧图像序列；
+Synchronized Data.xlsx：Excel 表格，记录 Frame Image 中每帧图像对应的人物骨骼坐标点等同步标注信息。
